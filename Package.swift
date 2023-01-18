@@ -1,0 +1,27 @@
+// swift-tools-version:5.1
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "SlackMessagesEstimator",
+    platforms: [
+        .macOS(.v10_15)
+    ],
+    products: [
+        .library(name: "SlackMessagesEstimator", targets: ["SlackMessagesEstimator"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/mxcl/PromiseKit.git", from: "6.12.0"),
+        .package(url: "https://github.com/pvzig/SlackKit.git", from: "4.5.0"),
+        .package(url: "https://github.com/jpsim/Yams.git", from: "2.0.0")
+    ],
+    targets: [
+        .target(
+            name: "SlackMessagesEstimator",
+            dependencies: ["PromiseKit", "SlackKit", "Yams"]),
+        .testTarget(
+            name: "SlackMessagesEstimatorTests",
+            dependencies: ["SlackMessagesEstimator"]),
+    ]
+)

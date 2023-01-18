@@ -1,0 +1,124 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Core",
+        "repositoryURL": "https://github.com/vapor/core.git",
+        "state": {
+          "branch": null,
+          "revision": "10d33362a47fab03a067e78fb0791341d9c634fa",
+          "version": "3.9.3"
+        }
+      },
+      {
+        "package": "Crypto",
+        "repositoryURL": "https://github.com/vapor/crypto.git",
+        "state": {
+          "branch": null,
+          "revision": "df8eb7d8ae51787b3a0628aa3975e67666da936c",
+          "version": "3.3.3"
+        }
+      },
+      {
+        "package": "HTTP",
+        "repositoryURL": "https://github.com/vapor/http.git",
+        "state": {
+          "branch": null,
+          "revision": "3808ed0401379b6e9f4a053f03090ea9d658caa9",
+          "version": "3.2.1"
+        }
+      },
+      {
+        "package": "PromiseKit",
+        "repositoryURL": "https://github.com/mxcl/PromiseKit.git",
+        "state": {
+          "branch": null,
+          "revision": "80963d4317bcdc03891e0fbaa744f20511d1bc08",
+          "version": "6.12.0"
+        }
+      },
+      {
+        "package": "SlackKit",
+        "repositoryURL": "https://github.com/pvzig/SlackKit.git",
+        "state": {
+          "branch": null,
+          "revision": "98dbad9ac75ad9662fbed782540ac0a2442213a3",
+          "version": "4.5.0"
+        }
+      },
+      {
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/daltoniam/Starscream",
+        "state": {
+          "branch": null,
+          "revision": "e6b65c6d9077ea48b4a7bdda8994a1d3c6969c8d",
+          "version": "3.1.1"
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "ba7970fe396e8198b84c6c1b44b38a1d4e2eb6bd",
+          "version": "1.14.1"
+        }
+      },
+      {
+        "package": "swift-nio-ssl",
+        "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
+        "state": {
+          "branch": null,
+          "revision": "0f3999f3e3c359cc74480c292644c3419e44a12f",
+          "version": "1.4.0"
+        }
+      },
+      {
+        "package": "swift-nio-ssl-support",
+        "repositoryURL": "https://github.com/apple/swift-nio-ssl-support.git",
+        "state": {
+          "branch": null,
+          "revision": "c02eec4e0e6d351cd092938cf44195a8e669f555",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "swift-nio-zlib-support",
+        "repositoryURL": "https://github.com/apple/swift-nio-zlib-support.git",
+        "state": {
+          "branch": null,
+          "revision": "37760e9a52030bb9011972c5213c3350fa9d41fd",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Swifter",
+        "repositoryURL": "https://github.com/httpswift/swifter.git",
+        "state": {
+          "branch": null,
+          "revision": "8b5afb48ae64d4f729f0489ddcfe09c62b9c3687",
+          "version": "1.4.7"
+        }
+      },
+      {
+        "package": "WebSocket",
+        "repositoryURL": "https://github.com/vapor/websocket",
+        "state": {
+          "branch": null,
+          "revision": "d85e5b6dce4d04065865f77385fc3324f98178f6",
+          "version": "1.1.2"
+        }
+      },
+      {
+        "package": "Yams",
+        "repositoryURL": "https://github.com/jpsim/Yams.git",
+        "state": {
+          "branch": null,
+          "revision": "c947a306d2e80ecb2c0859047b35c73b8e1ca27f",
+          "version": "2.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
