@@ -10,25 +10,25 @@ import Foundation
 import Yams
 
 public struct SlackMessagesEstimatorConfiguration: Codable {
-    public var token: String
-    public var emojisToMessages: EmojisToMessages
+    public let token: String
+    public let emojisToMessages: EmojisToMessages
 }
 
 public struct EmojisToMessages: Codable {
-    public var reportChannelName: String?
-    public var excludeUsers: [String]?
-    public var emojisToMessagesCases: [EmojisToMessagesCase]
+    public let reportChannelName: String?
+    public let excludeUsers: [String]?
+    public let emojisToMessagesCases: [EmojisToMessagesCase]
 }
 
 public struct EmojisToMessagesCase: Codable {
-    public var emojis: [String]
-    public var textProperties: TextProperties
+    public let emojis: [String]
+    public let textProperties: TextProperties
 }
 
 public struct TextProperties: Codable {
-    public var startsWith: [String]?
-    public var endsWith: [String]?
-    public var contains: [String]?
+    public let startsWith: [String]?
+    public let endsWith: [String]?
+    public let contains: [String]?
 }
 
 public func createSlackMessagesEstimatorConfiguration(

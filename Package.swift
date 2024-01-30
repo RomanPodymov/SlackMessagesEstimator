@@ -13,15 +13,13 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/mxcl/PromiseKit.git", from: "8.1.1"),
-        .package(url: "https://github.com/RomanPodymov/SlackKit", branch: "master"),
+        .package(url: "https://github.com/RomanPodymov/SlackKit", branch: "main"),
         .package(url: "https://github.com/jpsim/Yams.git", from: "5.0.6")
     ],
     targets: [
         .target(
             name: "SlackMessagesEstimator",
-            dependencies: ["PromiseKit", "SlackKit", "Yams"]),
-        .testTarget(
-            name: "SlackMessagesEstimatorTests",
-            dependencies: ["SlackMessagesEstimator"]),
+            dependencies: ["PromiseKit", "SlackKit", "Yams"]
+        )
     ]
 )
