@@ -25,6 +25,16 @@ private extension SKWebAPI.WebAPI {
             })
         }
     }
+
+    func promiseForAuthenticationTest() -> Promise<(String?, String?)> {
+        return Promise { resolver in
+            self.authenticationTest { user, team in
+                resolver.fulfill((user, team))
+            } failure: { error in
+                resolver.reject(error)
+            }
+        }
+    }
 }
 
 public final class SlackMessagesEstimator {
@@ -46,18 +56,28 @@ public final class SlackMessagesEstimator {
     
     public final func start() {
         guard let webAPI = bot.webAPI else {
+            startListenMessages()
             return
         }
+
         firstly {
-            when(fulfilled: webAPI.promiseToGetChannelsList(
-                excludeArchived: true,
-                excludeMembers: true
-            ), webAPI.promiseToGetUsersList())
-        }.done { [weak self] channels, users in
+            when(
+                fulfilled: webAPI.promiseToGetChannelsList(
+                    excludeArchived: true,
+                    excludeMembers: true
+                ).recover { _ in
+                    .value(nil)
+                },
+                webAPI.promiseToGetUsersList().recover { _ in
+                    .value(nil)
+                },
+                webAPI.promiseForAuthenticationTest()
+            )
+        }.done { [weak self] channels, users, _ in
             self?.onChannelsLoaded(channels: channels)
             self?.onUsersLoaded(users: users)
-        }.catch { _ in
-            
+        }.catch {
+            fatalError($0.localizedDescription)
         }.finally { [weak self] in
             self?.startListenMessages()
         }
@@ -138,7 +158,7 @@ public final class SlackMessagesEstimator {
                     return
                 }
                 strongSelf.sendReportMessage(emoji: emoji, message: message)
-            }, failure: { (_) in
+            }, failure: { _ in
 
             }
         )
