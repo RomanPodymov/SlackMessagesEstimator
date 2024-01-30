@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/vapor/core.git",
         "state": {
           "branch": null,
-          "revision": "10d33362a47fab03a067e78fb0791341d9c634fa",
-          "version": "3.9.3"
+          "revision": "89c6989fd8b1e08acfd198afba1c38971bb814b2",
+          "version": "3.10.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/vapor/crypto.git",
         "state": {
           "branch": null,
-          "revision": "df8eb7d8ae51787b3a0628aa3975e67666da936c",
-          "version": "3.3.3"
+          "revision": "105c2f875588bf40dd24c00cef3644bf8e327770",
+          "version": "3.4.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vapor/http.git",
         "state": {
           "branch": null,
-          "revision": "3808ed0401379b6e9f4a053f03090ea9d658caa9",
-          "version": "3.2.1"
+          "revision": "0464b715a4b59f54078bcf7a4b424767b03db5a5",
+          "version": "3.4.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/mxcl/PromiseKit.git",
         "state": {
           "branch": null,
-          "revision": "80963d4317bcdc03891e0fbaa744f20511d1bc08",
-          "version": "6.12.0"
+          "revision": "cb70b070cde06837cd10a1febdf6105c1a3bb348",
+          "version": "8.1.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/pvzig/SlackKit.git",
         "state": {
           "branch": null,
-          "revision": "98dbad9ac75ad9662fbed782540ac0a2442213a3",
-          "version": "4.5.0"
+          "revision": "3823aee4cfd05d618d2aaf334681b9bc4db89a63",
+          "version": "4.8.0"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/daltoniam/Starscream",
         "state": {
           "branch": null,
-          "revision": "e6b65c6d9077ea48b4a7bdda8994a1d3c6969c8d",
-          "version": "3.1.1"
+          "revision": "ac6c0fc9da221873e01bd1a0d4818498a71eef33",
+          "version": "4.0.6"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "ba7970fe396e8198b84c6c1b44b38a1d4e2eb6bd",
-          "version": "1.14.1"
+          "revision": "546610d52b19be3e19935e0880bb06b9c03f5cef",
+          "version": "1.14.4"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/httpswift/swifter.git",
         "state": {
           "branch": null,
-          "revision": "8b5afb48ae64d4f729f0489ddcfe09c62b9c3687",
-          "version": "1.4.7"
+          "revision": "9483a5d459b45c3ffd059f7b55f9638e268632fd",
+          "version": "1.5.0"
         }
       },
       {
@@ -114,8 +114,8 @@
         "repositoryURL": "https://github.com/jpsim/Yams.git",
         "state": {
           "branch": null,
-          "revision": "c947a306d2e80ecb2c0859047b35c73b8e1ca27f",
-          "version": "2.0.0"
+          "revision": "0d9ee7ea8c4ebd4a489ad7a73d5c6cad55d6fed3",
+          "version": "5.0.6"
         }
       }
     ]

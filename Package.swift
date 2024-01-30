@@ -12,9 +12,9 @@ let package = Package(
         .library(name: "SlackMessagesEstimator", targets: ["SlackMessagesEstimator"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/mxcl/PromiseKit.git", from: "6.12.0"),
-        .package(url: "https://github.com/pvzig/SlackKit.git", from: "4.5.0"),
-        .package(url: "https://github.com/jpsim/Yams.git", from: "2.0.0")
+        .package(url: "https://github.com/mxcl/PromiseKit.git", from: "8.1.1"),
+        .package(url: "https://github.com/pvzig/SlackKit.git", from: "4.8.0"),
+        .package(url: "https://github.com/jpsim/Yams.git", from: "5.0.6")
     ],
     targets: [
         .target(
