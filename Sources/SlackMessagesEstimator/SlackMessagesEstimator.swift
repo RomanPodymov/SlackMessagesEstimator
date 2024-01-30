@@ -1,3 +1,11 @@
+//
+//  SlackMessagesEstimator.swift
+//  SlackMessagesEstimator
+//
+//  Created by Roman Podymov on 30/01/2024.
+//  Copyright © 2024 SlackMessagesEstimator. All rights reserved.
+//
+
 import Foundation
 import PromiseKit
 import SlackKit
@@ -37,7 +45,7 @@ private extension SKWebAPI.WebAPI {
     }
 }
 
-public final class SlackMessagesEstimator {
+public class SlackMessagesEstimator {
     private let bot = SlackKit()
     private var reportChannelId: String?
     private var userNamesToIdsIgnore: [String:[String]]?
@@ -54,7 +62,7 @@ public final class SlackMessagesEstimator {
         bot.addWebAPIAccessWithToken(slackMessagesEstimatorConfiguration.token)
     }
     
-    public final func start() {
+    public func start() {
         guard let webAPI = bot.webAPI else {
             startListenMessages()
             return
@@ -168,7 +176,7 @@ public final class SlackMessagesEstimator {
         guard let reportChannelId = reportChannelId else {
             return
         }
-        bot.webAPI?.sendMessage(channel: reportChannelId, text: "I did it with \(emoji) for message \(message)", success: { _, _ in
+        bot.webAPI?.sendMessage(channel: reportChannelId, text: "Added \(emoji) for message \(message)", success: { _, _ in
             
         }, failure: { _ in
             

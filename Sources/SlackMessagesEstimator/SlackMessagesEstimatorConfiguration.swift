@@ -1,3 +1,11 @@
+//
+//  SlackMessagesEstimatorConfiguration.swift
+//  SlackMessagesEstimator
+//
+//  Created by Roman Podymov on 30/01/2024.
+//  Copyright © 2024 SlackMessagesEstimator. All rights reserved.
+//
+
 import Foundation
 import Yams
 
