@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/mxcl/PromiseKit.git", from: "8.1.1"),
-        .package(url: "https://github.com/pvzig/SlackKit.git", from: "4.8.0"),
+        .package(url: "https://github.com/RomanPodymov/SlackKit.git", branch: "main"),
         .package(url: "https://github.com/jpsim/Yams.git", from: "5.0.6")
     ],
     targets: [

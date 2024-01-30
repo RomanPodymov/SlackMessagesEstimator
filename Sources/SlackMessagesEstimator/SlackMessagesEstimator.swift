@@ -18,8 +18,8 @@ private extension SKWebAPI.WebAPI {
     
     func promiseToGetUsersList() -> Promise<[[String: Any]]?> {
         return Promise { resolver in
-            usersList(success: {
-                resolver.fulfill($0)
+            usersList(success: { list, _ in
+                resolver.fulfill(list)
             }, failure: {
                 resolver.reject($0)
             })
