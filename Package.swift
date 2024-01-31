@@ -20,6 +20,10 @@ let package = Package(
         .target(
             name: "SlackMessagesEstimator",
             dependencies: ["PromiseKit", "SlackKit", "Yams"]
+        ),
+        .testTarget(
+            name: "SlackMessagesEstimatorTests",
+            dependencies: ["SlackMessagesEstimator"]
         )
     ]
 )
