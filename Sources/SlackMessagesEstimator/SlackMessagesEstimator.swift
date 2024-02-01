@@ -11,6 +11,7 @@ import PromiseKit
 import SlackKit
 
 private extension SKWebAPI.WebAPI {
+    @available(*, deprecated)
     func promiseToGetChannelsList(
         excludeArchived: Bool,
         excludeMembers: Bool
@@ -23,11 +24,27 @@ private extension SKWebAPI.WebAPI {
             })
         }
     }
-    
+
+    func promiseToGetConversationsList(
+        excludeArchived: Bool,
+        types: [ConversationType]?
+    ) -> Promise<[[String: Any]]?> {
+        return Promise { resolver in
+            conversationsList(
+                excludeArchived: excludeArchived,
+                types: types,
+                success: { channels, _ in
+                resolver.fulfill(channels)
+            }, failure: {
+                resolver.reject($0)
+            })
+        }
+    }
+
     func promiseToGetUsersList() -> Promise<[[String: Any]]?> {
         return Promise { resolver in
-            usersList(success: { list, _ in
-                resolver.fulfill(list)
+            usersList(success: { users, _ in
+                resolver.fulfill(users)
             }, failure: {
                 resolver.reject($0)
             })
@@ -36,7 +53,7 @@ private extension SKWebAPI.WebAPI {
 
     func promiseForAuthenticationTest() -> Promise<(String?, String?)> {
         return Promise { resolver in
-            self.authenticationTest { user, team in
+            authenticationTest { user, team in
                 resolver.fulfill((user, team))
             } failure: { error in
                 resolver.reject(error)
@@ -57,6 +74,7 @@ public class SlackMessagesEstimator {
         ) else {
             return nil
         }
+
         self.slackMessagesEstimatorConfiguration = slackMessagesEstimatorConfiguration
         bot.addRTMBotWithAPIToken(slackMessagesEstimatorConfiguration.token)
         bot.addWebAPIAccessWithToken(slackMessagesEstimatorConfiguration.token)
@@ -70,9 +88,9 @@ public class SlackMessagesEstimator {
 
         firstly {
             when(
-                fulfilled: webAPI.promiseToGetChannelsList(
+                fulfilled: webAPI.promiseToGetConversationsList(
                     excludeArchived: true,
-                    excludeMembers: true
+                    types: [.public_channel, .private_channel]
                 ).recover { _ in
                     .value(nil)
                 },
@@ -93,11 +111,12 @@ public class SlackMessagesEstimator {
     
     private func onChannelsLoaded(channels: [[String:Any]]?) {
         let reportChannelName = slackMessagesEstimatorConfiguration.emojisToMessages.reportChannelName
-        reportChannelId = reportChannelName.flatMap { reportChannelNameValue in
+        let channel = reportChannelName.flatMap { reportChannelNameValue in
             return channels?.first {
                 $0["name_normalized"] as? String == reportChannelNameValue
             }
-        }?["id"] as? String
+        }
+        reportChannelId = channel?["id"] as? String
     }
     
     private func onUsersLoaded(users: [[String:Any]]?) {
