@@ -21,3 +21,7 @@ dependencies: [
     .package(url: "https://github.com/RomanPodymov/SlackMessagesEstimator.git", from: "0.0.1")
 ]
 ```
+
+## How to use ```SlackMessagesEstimator```?
+
+Check [this project](https://github.com/RomanPodymov/SlackMessagesEstimatorUtility).

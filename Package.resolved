@@ -12,10 +12,10 @@
     {
       "identity" : "slackkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/RomanPodymov/SlackKit.git",
+      "location" : "https://github.com/RomanPodymov/SlackKit",
       "state" : {
         "branch" : "main",
-        "revision" : "4b0c7f139015a72f144f19903420a4d56e0ab5c0"
+        "revision" : "a6c63dea4b79d71bebda09461f743b5d91738554"
       }
     },
     {
