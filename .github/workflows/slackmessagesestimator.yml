@@ -1,0 +1,20 @@
+name: SlackMessagesEstimatorJobs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: SlackMessagesEstimatorTests
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.6.0
+        with:
+          xcode-version: 15.2
+      - name: Build
+        run: swift build -v
