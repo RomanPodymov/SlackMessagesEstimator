@@ -1,3 +1,11 @@
+//
+//  SlackMessagesEstimatorTests.swift
+//  SlackMessagesEstimator
+//
+//  Created by Roman Podymov on 05/02/2024.
+//  Copyright © 2024 SlackMessagesEstimator. All rights reserved.
+//
+
 import XCTest
 @testable import SlackMessagesEstimator
 
@@ -36,16 +44,16 @@ final class SlackMessagesEstimatorTests: XCTestCase {
         XCTAssertEqual(excludeUsers?[1], "second user")
 
         let emojisToMessagesCases = slackMessagesEstimatorConfiguration.emojisToMessages.emojisToMessagesCases
-
         XCTAssertEqual(emojisToMessagesCases.count, 2)
-        XCTAssertEqual(emojisToMessagesCases[0].emojis.count, 2)
-        XCTAssertEqual(emojisToMessagesCases[0].textProperties.startsWith?[0], "first string")
-        XCTAssertEqual(emojisToMessagesCases[0].textProperties.endsWith?[0], "second string")
-        XCTAssertEqual(emojisToMessagesCases[0].textProperties.contains?[0], "third string")
 
-        XCTAssertEqual(emojisToMessagesCases[1].emojis.count, 3)
-        XCTAssertEqual(emojisToMessagesCases[1].textProperties.startsWith?[0], "first string")
-        XCTAssertEqual(emojisToMessagesCases[1].textProperties.endsWith?[0], "second string")
-        XCTAssertEqual(emojisToMessagesCases[1].textProperties.contains?[0], "third string")
+        testEmojisToMessagesCase(emojisCase: emojisToMessagesCases[0], emojisCount: 2)
+        testEmojisToMessagesCase(emojisCase: emojisToMessagesCases[1], emojisCount: 3)
+    }
+
+    private func testEmojisToMessagesCase(emojisCase: EmojisToMessagesCase, emojisCount: Int) {
+        XCTAssertEqual(emojisCase.emojis.count, emojisCount)
+        XCTAssertEqual(emojisCase.textProperties.startsWith?[0], "first string")
+        XCTAssertEqual(emojisCase.textProperties.endsWith?[0], "second string")
+        XCTAssertEqual(emojisCase.textProperties.contains?[0], "third string")
     }
 }
