@@ -18,7 +18,7 @@ To integrate SlackMessagesEstimator into your Xcode project using Swift Package 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/RomanPodymov/SlackMessagesEstimator.git", from: "1.0.0")
+    .package(url: "https://github.com/RomanPodymov/SlackMessagesEstimator", branch: "master")
 ]
 ```
 
